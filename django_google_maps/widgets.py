@@ -12,7 +12,7 @@ class GoogleMapsAddressWidget(widgets.TextInput):
         }
         js = (
             'https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js',
-            'https://maps.google.com/maps/api/js?key={}&libraries=places'.format(
+            'https://maps.google.com/maps/api/js?key={}&libraries=places&region=uk&language=uk'.format(
                 settings.GOOGLE_MAPS_API_KEY),
             'django_google_maps/js/google-maps-admin.js',
         )
