@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.forms import widgets
 
+from django.utils.html import format_html
+
 
 class GoogleMapsAddressWidget(widgets.TextInput):
     """a widget that will place a google map right after the #id_address field"""
@@ -10,9 +12,10 @@ class GoogleMapsAddressWidget(widgets.TextInput):
         css = {
             'all': ('django_google_maps/css/google-maps-admin.css', )
         }
+
         js = (
             'https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js',
-            'https://maps.google.com/maps/api/js?key={}&libraries=places&region=uk&language=uk'.format(
+            'https://maps.google.com/maps/api/js?key={}&libraries=places&region=uk&language=uk&callback=Function.prototype'.format(
                 settings.GOOGLE_MAPS_API_KEY),
             'django_google_maps/js/google-maps-admin.js',
         )
